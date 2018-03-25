@@ -1,6 +1,7 @@
 This is my little rainmaking program.
 The 'USEME' folder should have everything you need to run the program, just click the .exe and go.
 If you want to see the code it's in a solution in the 'development' folder.
+Once you've got the exe going, try pressing different buttons to see what happens!
 Have fun!
 
 This project is purely for the sake of learning, none of the fonts or sounds are mine please dont not use any of this project commercially.
