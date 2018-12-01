@@ -1,3 +1,27 @@
-﻿  main.cpp
-src\main.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-src\main.cpp(105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  cloud.cpp
+d:\programming\rain simulation git\development\dropf\src\cloud.cpp(43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+  droplet.cpp
+d:\programming\rain simulation git\development\dropf\src\droplet.cpp(10): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\programming\rain simulation git\development\dropf\src\droplet.cpp(41): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+d:\programming\rain simulation git\development\dropf\src\droplet.cpp(42): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  main.cpp
+d:\programming\rain simulation git\development\dropf\src\main.cpp(94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\programming\rain simulation git\development\dropf\src\main.cpp(105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  66 of 170 functions (38.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Dropf.vcxproj -> D:\Programming\Rain Simulation Git\Development\Release\Dropf.exe
