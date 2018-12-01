@@ -1,5 +1,5 @@
 #include "droplet.h"
-
+//TODO: Droplet ought to know the window size and use that for resetting itself!
 Droplet::Droplet()
 {
     m_reset = true;

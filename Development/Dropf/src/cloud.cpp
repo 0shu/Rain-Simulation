@@ -1,6 +1,6 @@
 #include "cloud.h"
 #include <stdlib.h>
-
+//TODO: Cloud ought to take the window size and use that to set itself up!
 Cloud::Cloud()
 {
     arrSize = 32;

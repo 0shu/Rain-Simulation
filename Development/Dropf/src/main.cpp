@@ -3,6 +3,8 @@
 #include <iostream>
 #include "droplet.h"
 #include "cloud.h"
+//TODO: Comment all this code and re-organise from 8 months ago ^^
+//TODO: Clean up event tree so its more readable and there's less random stuff like needing to create flag booleans
 
 int main()
 {
@@ -69,8 +71,8 @@ int main()
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) flag1 = true;
-                if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) flag1 = true; //Does rain
+                if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))             //Does thunder
                 {
                     if (counter % 2) sound1.play();
                     else sound2.play();
@@ -80,8 +82,8 @@ int main()
             }
             if (event.type == sf::Event::MouseButtonReleased)
             {
-                if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))flag1 = false;
-                if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))flag2 = false;
+                if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))flag1 = false;  //Stops doing rain
+                if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))flag2 = false; //Stops flash of thunder
             }
 
         }
@@ -96,8 +98,8 @@ int main()
             timer.restart();
         }
 
-        if (flag2) window.clear(sf::Color(255, 255, 200, 255));
-        else
+        if (flag2) window.clear(sf::Color(255, 255, 200, 255)); //makes lighting happen by only rendering white screen
+        else                                                    //renders everything because thunder isnt happening
         {
             window.clear(sf::Color(20, 40, 55, 255));
             for (int i = 0; i < 20; i++)
