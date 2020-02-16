@@ -136,6 +136,10 @@
   <ItemGroup>
     <ClInclude Include="include\cloud.h" />
     <ClInclude Include="include\droplet.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

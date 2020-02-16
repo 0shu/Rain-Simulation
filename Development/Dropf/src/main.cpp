@@ -9,6 +9,10 @@ int main()
 {
     ShowWindow(::GetConsoleWindow(), SW_HIDE);
     sf::RenderWindow window(sf::VideoMode(1000, 400), "Rainmaker 0.3");
+
+    sf::Image myIcon;
+    myIcon.loadFromFile("icon.png");
+    window.setIcon(96, 96, myIcon.getPixelsPtr());
     
     Cloud cloud;
     bool flag1 = false;
