@@ -1,11 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <Windows.h>
 #include "droplet.h"
 #include "cloud.h"
 
 int main()
 {
+    ShowWindow(::GetConsoleWindow(), SW_HIDE);
     sf::RenderWindow window(sf::VideoMode(1000, 400), "Rainmaker 0.3");
     
     Cloud cloud;
