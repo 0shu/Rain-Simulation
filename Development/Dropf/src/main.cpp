@@ -40,7 +40,7 @@ int main()
     music.setVolume(5);
     music.play();
 
-    std::cout << ":::: NOTE ::::\nIf it says: \"AL lib: (EE) MMDevApiMsgProc: Unexpected message: 49607\" Don't worry.";
+    //std::cout << ":::: NOTE ::::\nIf it says: \"AL lib: (EE) MMDevApiMsgProc: Unexpected message: 49607\" Don't worry.";
     // SOUND EXPERIMENTS IN THIS BOX
 
     sf::Clock timer;
