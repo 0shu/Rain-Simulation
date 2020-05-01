@@ -8,15 +8,18 @@
 int main()
 {
     ShowWindow(::GetConsoleWindow(), SW_HIDE);
-    sf::RenderWindow window(sf::VideoMode(1000, 400), "Rainmaker 0.3");
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "Rainmaker 0.4");
+
+    sf::View view = window.getDefaultView();
 
     sf::Image myIcon;
-    myIcon.loadFromFile("icon.png");
+    myIcon.loadFromFile("icon1.png");
     window.setIcon(96, 96, myIcon.getPixelsPtr());
     
     Cloud cloud;
     bool flag1 = false;
     bool flag2 = false;
+    cloud.setBounds(sf::Vector2f(1280, 720));
 
     // TEXT EXPERIMENTS IN THIS BOX
 
@@ -72,6 +75,21 @@ int main()
                     music.setVolume(5);
                     cloud.reset();
                 }
+                if (event.key.code == sf::Keyboard::Num1)
+                {
+                    cloud.showDroplets(true);
+                    cloud.showRipples(false);
+                }
+                if (event.key.code == sf::Keyboard::Num2)
+                {
+                    cloud.showDroplets(false);
+                    cloud.showRipples(true);
+                }
+                if (event.key.code == sf::Keyboard::Num3)
+                {
+                    cloud.showDroplets(true);
+                    cloud.showRipples(true);
+                }
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
@@ -89,12 +107,25 @@ int main()
                 if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))flag1 = false;
                 if (!sf::Mouse::isButtonPressed(sf::Mouse::Button::Right))flag2 = false;
             }
+            if (event.type == sf::Event::Resized)
+            {
+                // resize my view
+                /*view.setSize({
+                        static_cast<float>(event.size.width),
+                        static_cast<float>(event.size.height)
+                    });*/
+                view.reset(sf::FloatRect(0, 0, event.size.width, event.size.height));
+                window.setView(view);
+                // and align shape
+
+                cloud.setBounds(sf::Vector2f(event.size.width, event.size.height));
+            }
 
         }
         if (fElapsedTime > fFrameTime)
         {
             
-            cloud.update();
+            cloud.update(fElapsedTime);
             if (flag1) 
             {
                 music.setVolume((cloud.append(sf::Mouse::getPosition(window)) / 10) + 5); 
@@ -105,13 +136,13 @@ int main()
         if (flag2) window.clear(sf::Color(255, 255, 200, 255));
         else
         {
-            window.clear(sf::Color(20, 40, 55, 255));
-            for (int i = 0; i < 20; i++)
-            {
-                text1.setPosition(1 * i, 2 * i);
-                text1.setFillColor(sf::Color(13 * i, 33, 50, 50));
-                window.draw(text1);
-            }
+            window.clear(sf::Color(30, 40, 25, 255));
+            ///*for (int i = 0; i < 20; i++)
+            //{
+            //    text1.setPosition(1 * i, 2 * i);
+            //    text1.setFillColor(sf::Color(13 * i, 33, 50, 50));
+            //    window.draw(text1);
+            //}*/
             window.draw(cloud);
         }
         window.display();

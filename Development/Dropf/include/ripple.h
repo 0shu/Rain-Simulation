@@ -2,24 +2,27 @@
 
 #include <SFML/Graphics.hpp>
 
-class Droplet : public sf::Drawable
+class Ripple : public sf::Drawable
 {
 private:
-    sf::RectangleShape m_body;
-    float m_size;
-    float m_speed;
-    float m_wibble;
+    sf::CircleShape m_body;
+    float m_power;
+    float m_timer;
+    float m_ratio = 0.5f;
+
+    float m_scaler = 1.0f;
     bool m_reset;
 public:
     static sf::Vector2f m_bounds;
-    Droplet();
-    bool update();
+    Ripple();
+    void update(float timeDelta);
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     void setPostition(float X, float Y);
-    void setSize(float fSize);
-    void setSpeed(float fSpeed);
+    void setPower(float fPower);
     void setReset(bool reset);
     void setColor(sf::Color color);
+    void setThickness(float thickness);
     void setBounds(sf::Vector2f bounds);
 };
 
+//sf::Vector2f Ripple::m_bounds = sf::Vector2f(1000, 400);

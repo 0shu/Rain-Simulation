@@ -132,10 +132,12 @@
     <ClCompile Include="src\cloud.cpp" />
     <ClCompile Include="src\droplet.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ripple.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cloud.h" />
     <ClInclude Include="include\droplet.h" />
+    <ClInclude Include="include\ripple.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
